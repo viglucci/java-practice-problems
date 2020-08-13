@@ -9,12 +9,12 @@ public class YearlySynopsisConsolePrinter {
 
 	private static DecimalFormat twoPlacesDecimalFormatter = new DecimalFormat("#,##0.00");
 
-	public static void printTable(List<YearSynopsis> averagePrices) {
+	public static void printTable(List<YearSynopsis> yearSynopses) {
 		System.out.println("\nSynopsis by year:\n");
 		printDivider();
 		printHeader();
 		printDivider();
-		averagePrices.forEach(YearlySynopsisConsolePrinter::printRow);
+		yearSynopses.forEach(YearlySynopsisConsolePrinter::printRow);
 	}
 
 	public static void printHeader () {
