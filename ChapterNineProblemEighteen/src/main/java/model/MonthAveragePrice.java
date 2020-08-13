@@ -1,4 +1,4 @@
-package main.java;
+package main.java.model;
 
 public class MonthAveragePrice {
 	private final Double average;

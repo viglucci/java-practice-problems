@@ -1,5 +1,14 @@
 package main.java;
 
+import main.java.calculator.AveragePricePerMonthCalculator;
+import main.java.calculator.AveragePricePerYearCalculator;
+import main.java.mapper.DataFileMapper;
+import main.java.model.DatePricePair;
+import main.java.model.MonthAveragePrice;
+import main.java.model.YearAveragePrice;
+import main.java.printer.AveragePriceByMonthConsolePrinter;
+import main.java.printer.AveragePriceByYearConsolePrinter;
+
 import java.io.IOException;
 import java.util.List;
 

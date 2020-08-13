@@ -1,4 +1,6 @@
-package main.java;
+package main.java.mapper;
+
+import main.java.model.DatePricePair;
 
 import java.io.IOException;
 import java.nio.file.Files;

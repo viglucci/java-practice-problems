@@ -1,4 +1,7 @@
-package main.java;
+package main.java.calculator;
+
+import main.java.model.DatePricePair;
+import main.java.model.MonthAveragePrice;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,8 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 public class AveragePricePerMonthCalculator {
-
-	static List<MonthAveragePrice> calculate(List<DatePricePair> pairs) {
+	public static List<MonthAveragePrice> calculate(List<DatePricePair> pairs) {
 		List<MonthAveragePrice> averagePrices = new ArrayList<>();
 		Map<Integer, List<Double>> pricesByMonth = new HashMap<>();
 

@@ -1,4 +1,6 @@
-package main.java;
+package main.java.printer;
+
+import main.java.model.YearAveragePrice;
 
 import java.text.DecimalFormat;
 import java.util.List;
