@@ -14,10 +14,9 @@ import java.util.List;
 
 public class Application {
 
-	private final String dataFilePath = "ChapterNineProblemEighteen/src/main/resources/gas-prices.dat";
-
 	public void run() throws IOException {
-		List<DatePricePair> allDatePricePairs = DataFileMapper.mapFileToDataPairs(this.dataFilePath);
+		String dataFilePath = "ChapterNineProblemEighteen/src/main/resources/gas-prices.dat";
+		List<DatePricePair> allDatePricePairs = DataFileMapper.mapFileToDataPairs(dataFilePath);
 
 		List<YearAveragePrice> averagePricesByYear = AveragePricePerYearCalculator.calculate(allDatePricePairs);
 		List<MonthAveragePrice> averagePricesByMonth = AveragePricePerMonthCalculator.calculate(allDatePricePairs);
