@@ -9,7 +9,11 @@ public class Application {
 
 	public void run() throws IOException {
 		List<DatePricePair> allDatePricePairs = DataFileMapper.mapFileToDataPairs(this.dataFilePath);
-		List<YearAveragePrice> averagePrices = AveragePricePerYearCalculator.calculate(allDatePricePairs);
-		AveragePriceByYearConsolePrinter.printTable(averagePrices);
+
+		List<YearAveragePrice> averagePricesByYear = AveragePricePerYearCalculator.calculate(allDatePricePairs);
+		List<MonthAveragePrice> averagePricesByMonth = AveragePricePerMonthCalculator.calculate(allDatePricePairs);
+
+		AveragePriceByYearConsolePrinter.printTable(averagePricesByYear);
+		AveragePriceByMonthConsolePrinter.printTable(averagePricesByMonth);
 	}
 }
