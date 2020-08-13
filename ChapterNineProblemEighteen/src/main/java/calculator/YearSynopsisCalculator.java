@@ -1,16 +1,16 @@
 package main.java.calculator;
 
 import main.java.model.DatePricePair;
-import main.java.model.YearAveragePrice;
+import main.java.model.YearSynopsis;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AveragePricePerYearCalculator {
-	public static List<YearAveragePrice> calculate(List<DatePricePair> pairs) {
-		List<YearAveragePrice> averagePrices = new ArrayList<>();
+public class YearSynopsisCalculator {
+	public static List<YearSynopsis> calculate(List<DatePricePair> pairs) {
+		List<YearSynopsis> synopsis = new ArrayList<>();
 		Map<Integer, List<Double>> pricesByYear = new HashMap<>();
 
 		pairs.forEach((pair) -> {
@@ -26,13 +26,23 @@ public class AveragePricePerYearCalculator {
 			List<Double> prices = entry.getValue();
 			int numberOfPrices = prices.size();
 			Double accumulator = 0.0;
+			Double low = null;
+			Double high = 0.0;
 			for (Double price : prices) {
 				accumulator += price;
+				if (low == null) {
+					low = price;
+				}
+				if (price > high) {
+					high = price;
+				} else if (price < low) {
+					low = price;
+				}
 			}
 			Double average = accumulator / numberOfPrices;
-			averagePrices.add(new YearAveragePrice(year, average));
+			synopsis.add(new YearSynopsis(year, average, low, high));
 		}
 
-		return averagePrices;
+		return synopsis;
 	}
 }
